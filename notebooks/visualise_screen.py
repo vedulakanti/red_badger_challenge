@@ -74,6 +74,6 @@ plt.ylabel("Total Word Count (Screen Time)", fontsize=12)
 plt.legend(title="Planet of Origin", bbox_to_anchor=(1.05, 1), loc="upper left")
 plt.xticks(rotation=0)
 plt.tight_layout()
-plt.savefig("screen_time.png")
+plt.savefig("output/screen_time.png")
 plt.show()
 

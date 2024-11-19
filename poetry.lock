@@ -855,7 +855,7 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 [[package]]
 name = "seaborn"
 version = "0.13.2"
-description = "Statistical data visualization"
+description = "Statistical data visualiation"
 optional = false
 python-versions = ">=3.8"
 files = [
