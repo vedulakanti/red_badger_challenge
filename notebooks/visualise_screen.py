@@ -1,25 +1,8 @@
 # Import necessary libraries
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import csv
-
-def preprocess_scripts(file_path, movie_name):
-    """
-    Preprocess the script file and extract character and dialogue data.
-    """
-    rows = []
-    with open(file_path, "r") as f:
-        reader = csv.reader(f, delimiter=" ", quotechar='"', skipinitialspace=True)
-        next(reader)  # Skip the header row
-        for row in reader:
-            rows.append({"character": row[1], "dialogue": row[2]})
-    
-    # Convert to a DataFrame
-    data = pd.DataFrame(rows)
-    data["movie"] = movie_name
-    data["word_count"] = data["dialogue"].apply(lambda x: len(str(x).split()))
-    return data
+from utils.utils import preprocess_scripts
 
 
 def load_and_merge_data(characters_file, script_files):
@@ -74,6 +57,6 @@ plt.ylabel("Total Word Count (Screen Time)", fontsize=12)
 plt.legend(title="Planet of Origin", bbox_to_anchor=(1.05, 1), loc="upper left")
 plt.xticks(rotation=0)
 plt.tight_layout()
-plt.savefig("output/screen_time.png")
+plt.savefig("outputs/screen_time.png")
 plt.show()
 

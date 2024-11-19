@@ -12,4 +12,4 @@ def test_fetch_data():
 def test_save_data():
     data = [{"name": "Luke Skywalker", "species": ["human"]}]
     save_data(data, "test_characters.csv")
-    assert os.path.exists("data/test_characters.csv")
+    assert os.path.exists("data/swapi/test_characters.csv")

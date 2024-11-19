@@ -8,6 +8,6 @@
 
 ## Steps
 1. Run `scripts/fetch_swapi_data.py` to fetch data from the SWAPI API.
-2. Run `scripts/preprocess_scripts.py` to process movie scripts.
+2. Run `scripts/screen_times.py` to fetch top 5 screen times.
 3. Run `scripts/analysis.py` to calculate insights.
 4. Use `notebooks/` for visualisation.

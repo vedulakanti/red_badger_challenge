@@ -1,23 +1,6 @@
 import pandas as pd
-import ast
-import csv
+from utils.utils import preprocess_scripts
 
-def preprocess_scripts(file_path, movie_name):
-    """
-    Preprocess the script file and extract character and dialogue data.
-    """
-    rows = []
-    with open(file_path, "r") as f:
-        reader = csv.reader(f, delimiter=" ", quotechar='"', skipinitialspace=True)
-        next(reader)  # Skip the header row
-        for row in reader:
-            rows.append({"character": row[1], "dialogue": row[2]})
-    
-    # Convert to a DataFrame
-    data = pd.DataFrame(rows)
-    data["movie"] = movie_name
-    data["word_count"] = data["dialogue"].apply(lambda x: len(str(x).split()))
-    return data
 
 def map_characters_to_planets(characters_file, scripts_file):
     """
@@ -50,6 +33,7 @@ def map_characters_to_planets(characters_file, scripts_file):
     # Return top 5 planets by screen time
     top_5_planets = planet_screen_time.head(5)
     return top_5_planets
+
 
 if __name__ == "__main__":
     # Assuming files are in the 'data/' folder
